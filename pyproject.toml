@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apivault"
+version = "0.1.0"
+description = "Small CLI to store API keys in the OS keychain"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "UNLICENSED" }
+authors = [{ name = "API-Volt" }]
+dependencies = [
+  "keyring",
+]
+
+[project.scripts]
+apivault = "apivault.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
